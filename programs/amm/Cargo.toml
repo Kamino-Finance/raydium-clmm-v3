@@ -32,8 +32,17 @@ unexpected_cfgs = { level = "warn", check-cfg = [
 ] }
 
 [dependencies]
-anchor-lang = { version = "=1.0.2", features = ["init-if-needed"] }
-anchor-spl = { version = "=1.0.2", features = ["metadata", "memo"] }
+anchor-lang = { version = "=1.2.2", default-features = false, features = ["init-if-needed", "solana-v4"] }
+anchor-spl = { version = "=1.2.2", default-features = false, features = [
+    "associated_token",
+    "mint",
+    "token",
+    "token_2022",
+    "token_2022_extensions",
+    "metadata",
+    "memo",
+    "solana-v4",
+] }
 uint = { git = "https://github.com/raydium-io/parity-common", package = "uint" }
 bytemuck = { version = "1.19.0", features = ["derive", "min_const_generics"] }
 arrayref = { version = "0.3.6" }
